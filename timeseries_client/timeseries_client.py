@@ -6,11 +6,6 @@ from typing import List, Union, Optional, Dict
 from influxdb_client.client.write_api import SYNCHRONOUS
 import pandas as pd
 
-from dotenv import load_dotenv
-
-# load enviromentals
-load_dotenv()
-
 
 class TimeseriesClient:
     host: Union[str, None]

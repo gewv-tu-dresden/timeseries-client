@@ -20,7 +20,6 @@ python = "^3.8"
 loguru = "^0.5.1"
 influxdb-client = "^1.16.0"
 pandas = "^1.2.4"
-python-dotenv = "^0.17.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "black"
