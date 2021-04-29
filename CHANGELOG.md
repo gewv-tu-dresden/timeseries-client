@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2021-04-29)
+### Fix
+* **main:** Restructur project ([`2b187dd`](https://github.com/gewv-tu-dresden/timeseries-client/commit/2b187dd75000751526dc07bbf83506823e5f59cf))
+
 ## v0.2.0 (2021-04-29)
 ### Feature
 * **ci:** Add the first test ([`f2865f8`](https://github.com/gewv-tu-dresden/timeseries-client/commit/f2865f831f97feac0272dd5af151b0209b905bd4))
