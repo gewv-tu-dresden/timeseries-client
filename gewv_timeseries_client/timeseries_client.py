@@ -1,4 +1,5 @@
 from influxdb_client import InfluxDBClient
+from influxdb_client.client.write.point import Point
 from influxdb_client.rest import ApiException
 from influxdb_client.client.flux_table import FluxTable
 from datetime import datetime
@@ -83,34 +84,35 @@ class TimeseriesClient:
 
         return df
 
-    def write_points(self, points):
-        pass
+    def write_points(self, project: str, points: List[Point]):
+        self._write_api.write(bucket=project, record=points)
 
     def write_a_dataframe(
         self,
         project: str,
         measurement_name: str,
         dataframe: pd.DataFrame,
-        tags: Dict[str, str] = None,
+        tag_columns: List[str] = [],
+        additional_tags: Dict[str, str] = None,
     ):
         """
         Write a pandas dataframe to the influx db. You can define some
         tags, that are appended to every entry.
         """
 
-        if tags is None:
+        if additional_tags is None:
             self._write_api.write(
                 bucket=project,
                 record=dataframe,
                 data_frame_measurement_name=measurement_name,
+                data_frame_tag_columns=tag_columns,
             )
             return
 
         tags_dataframe = pd.DataFrame(index=dataframe.index)
-        tag_columns = []
 
         # create the dataframe with the tags
-        for tag_name, tag in tags.items():
+        for tag_name, tag in additional_tags.items():
             tag_columns.append(tag_name)
             tags_dataframe[tag_name] = [tag] * len(dataframe)
 
