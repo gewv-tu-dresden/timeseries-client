@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.3 (2021-04-29)
+### Fix
+* **ci:** Prepare upload to pypi ([`09685e2`](https://github.com/gewv-tu-dresden/timeseries-client/commit/09685e24fd88c8d42767339cc75bcbf845b32733))
+
 ## v0.2.2 (2021-04-29)
 ### Fix
 * **ci:** Dont ignore linting or tests ([`f25926e`](https://github.com/gewv-tu-dresden/timeseries-client/commit/f25926e6ab7500fb1e3b2d5c8c0efd2faaf08925))
