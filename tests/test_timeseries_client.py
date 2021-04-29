@@ -1,4 +1,4 @@
-from timeseries_client import TimeseriesClient
+from gewv_timeseries_client import TimeseriesClient
 
 
 def test_init():
