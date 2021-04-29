@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "timeseries-client"
 version = "0.1.0"
-description = "client to read and write data from the gewv timeseries db"
+description = "Client to read and write data from our timeseries db."
 authors = ["Karl <karl_eugen.wolffgang@tu-dresden.de>"]
 license = "MIT"
 classifiers = [
