@@ -143,7 +143,7 @@ class TimeseriesClient:
             self.test_datetime(end_time)
 
             query += f"""
-                |> range(start: {start_time.isoformat()}, stop: {end_time.isoformat})
+                |> range(start: {start_time.isoformat()}, stop: {end_time.isoformat()})
             """
         elif start_time is not None:
             self.test_datetime(start_time)
