@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2021-04-29)
+### Feature
+* **main:** Possible to define now tags if you write a dataframe ([`476676e`](https://github.com/gewv-tu-dresden/timeseries-client/commit/476676e9ab9c2c3933b406d1e6d59b4d67e54bbb))
+* **main:** Add a example ([`fcdee7d`](https://github.com/gewv-tu-dresden/timeseries-client/commit/fcdee7d352e98092ab451c1c57af585d76c902a1))
+
 ## v0.2.3 (2021-04-29)
 ### Fix
 * **ci:** Prepare upload to pypi ([`09685e2`](https://github.com/gewv-tu-dresden/timeseries-client/commit/09685e24fd88c8d42767339cc75bcbf845b32733))
