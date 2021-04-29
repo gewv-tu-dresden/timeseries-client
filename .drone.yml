@@ -23,7 +23,7 @@ steps:
       - name: poetry_bin
         path: /root/.poetry/
     commands:
-      - /root/.poetry/bin/poetry run black --check timeseries-client tests
+      - /root/.poetry/bin/poetry run black --check timeseries_client tests
 
   - name: check_linting
     image: python
@@ -34,7 +34,7 @@ steps:
       - name: poetry_bin
         path: /root/.poetry/
     commands:
-      - /root/.poetry/bin/poetry run flake8 timeseries-client tests
+      - /root/.poetry/bin/poetry run flake8 timeseries_client tests
 
   - name: tests
     image: python

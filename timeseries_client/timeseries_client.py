@@ -46,7 +46,7 @@ class TimeseriesClient:
     @staticmethod
     def from_env_properties():
         client = InfluxDBClient.from_env_properties()
-        return InfluxClient(client=client)
+        return TimeseriesClient(client=client)
 
     def health(self):
         return self._client.health()
