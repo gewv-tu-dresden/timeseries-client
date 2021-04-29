@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "timeseries-client"
+version = "0.1.0"
+description = "client to read and write data from the gewv timeseries db"
+authors = ["Karl <karl_eugen.wolffgang@tu-dresden.de>"]
+license = "MIT"
+classifiers = [
+        "Development Status :: 3 - Alpha",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
+        "License :: OSI Approved :: MIT License",
+        "Intended Audience :: Developers",
+        "Operating System :: Unix",
+        "Operating System :: POSIX",
+    ]
+homepage = "https://github.com/gewv-tu-dresden/timeseries-client"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+loguru = "^0.5.1"
+influxdb-client = "^1.16.0"
+pandas = "^1.2.4"
+python-dotenv = "^0.17.0"
+
+[tool.poetry.dev-dependencies]
+mypy = "black"
+black = "^21.4b1"
+rope = "^0.17.0"
+pylint = "^2.6.0"
+pytest = "^6.0.1"
+commitizen = "^2.1.0"
+python-semantic-release = "^7.2.2"
+flake8 = "^3.8.3"
+pytest-asyncio = "^0.14.0"
+
+[tool.semantic_release]
+version_variable = "timeseries-client/__init__.py:__version__"
+version_source = "commit"
+build_command = "/root/.poetry/bin/poetry version $(git describe --tags) && /root/.poetry/bin/poetry build"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
