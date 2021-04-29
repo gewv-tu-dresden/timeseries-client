@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gewv-timeseries-client"
-version = "0.1.0"
+version = "0.2.2"
 description = "Client to read and write data from our timeseries db."
 authors = ["Karl <karl_eugen.wolffgang@tu-dresden.de>"]
 license = "MIT"
