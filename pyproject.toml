@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "timeseries-client"
+name = "gewv-timeseries-client"
 version = "0.1.0"
 description = "Client to read and write data from our timeseries db."
 authors = ["Karl <karl_eugen.wolffgang@tu-dresden.de>"]
@@ -33,7 +33,7 @@ flake8 = "^3.8.3"
 pytest-asyncio = "^0.14.0"
 
 [tool.semantic_release]
-version_variable = "timeseries-client/__init__.py:__version__"
+version_variable = "timeseries_client/__init__.py:__version__"
 version_source = "commit"
 build_command = "/root/.poetry/bin/poetry version $(git describe --tags) && /root/.poetry/bin/poetry build"
 
