@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.1 (2021-04-29)
+### Fix
+* **main:** That if you deliver a start and a enddate, the enddate is not converted to the isoformat. ([`9ae4710`](https://github.com/gewv-tu-dresden/timeseries-client/commit/9ae471054c0966e5703f9738ea0a37d21a51b7de))
+
 ## v0.3.0 (2021-04-29)
 ### Feature
 * **main:** Possible to define now tags if you write a dataframe ([`476676e`](https://github.com/gewv-tu-dresden/timeseries-client/commit/476676e9ab9c2c3933b406d1e6d59b4d67e54bbb))
