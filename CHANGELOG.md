@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.2 (2021-04-29)
+### Fix
+* **ci:** Dont ignore linting or tests ([`f25926e`](https://github.com/gewv-tu-dresden/timeseries-client/commit/f25926e6ab7500fb1e3b2d5c8c0efd2faaf08925))
+
 ## v0.2.1 (2021-04-29)
 ### Fix
 * **main:** Restructur project ([`2b187dd`](https://github.com/gewv-tu-dresden/timeseries-client/commit/2b187dd75000751526dc07bbf83506823e5f59cf))
