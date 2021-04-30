@@ -15,8 +15,7 @@ For testing you can install all deps and start the module with that commands.
 ```
 poetry install
 poetry shell
-python examples/write_points.py
-python examples/read_points.py
+python examples/read_and_write_data.py
 ```
 
 ## Plans
