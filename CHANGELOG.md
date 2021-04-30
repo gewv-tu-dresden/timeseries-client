@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.3 (2021-04-30)
+### Fix
+* **main:** Update README.md ([`67b02ec`](https://github.com/gewv-tu-dresden/timeseries-client/commit/67b02ec49c3cc7616d768468864ee6820de1bad8))
+
+## v0.3.2 (2021-04-30)
+### Fix
+* **main:** Add more supported os's ([`ddfe596`](https://github.com/gewv-tu-dresden/timeseries-client/commit/ddfe5965c52380696cc16c5c7e108b38de39bfc6))
+
 ## v0.3.1 (2021-04-29)
 ### Fix
 * **main:** That if you deliver a start and a enddate, the enddate is not converted to the isoformat. ([`9ae4710`](https://github.com/gewv-tu-dresden/timeseries-client/commit/9ae471054c0966e5703f9738ea0a37d21a51b7de))
