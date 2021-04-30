@@ -12,6 +12,8 @@ classifiers = [
         "Intended Audience :: Developers",
         "Operating System :: Unix",
         "Operating System :: POSIX",
+        "Operating System :: Microsoft",
+        "Operating System :: MacOS"
     ]
 homepage = "https://github.com/gewv-tu-dresden/timeseries-client"
 
