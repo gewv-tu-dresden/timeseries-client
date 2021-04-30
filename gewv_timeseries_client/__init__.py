@@ -4,5 +4,5 @@ from loguru import logger
 # disable logger on default because this is a lib
 logger.disable(__name__)
 
-__version__ = "0.3.3"
+__version__ = "0.3.4"
 __all__ = ["TimeseriesClient"]

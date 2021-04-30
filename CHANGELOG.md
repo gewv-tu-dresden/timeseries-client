@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.4 (2021-04-30)
+### Fix
+* **main:** Min python version is now 3.7 ([`dbd1b47`](https://github.com/gewv-tu-dresden/timeseries-client/commit/dbd1b478040ac2efe7c1918c71830a7c41be144c))
+
 ## v0.3.3 (2021-04-30)
 ### Fix
 * **main:** Update README.md ([`67b02ec`](https://github.com/gewv-tu-dresden/timeseries-client/commit/67b02ec49c3cc7616d768468864ee6820de1bad8))
