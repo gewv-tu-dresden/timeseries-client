@@ -7,7 +7,8 @@ license = "MIT"
 classifiers = [
         "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.7.1",
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
         "Operating System :: Unix",
@@ -18,7 +19,7 @@ classifiers = [
 homepage = "https://github.com/gewv-tu-dresden/timeseries-client"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7.1"
 loguru = "^0.5.1"
 influxdb-client = "^1.16.0"
 pandas = "^1.2.4"
