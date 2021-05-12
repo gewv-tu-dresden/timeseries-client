@@ -1,5 +1,6 @@
 from influxdb_client import InfluxDBClient
 from influxdb_client.client.write.point import Point
+from influxdb_client.domain.organization import Organization
 from influxdb_client.rest import ApiException
 from influxdb_client.client.flux_table import FluxTable
 from datetime import datetime
@@ -21,6 +22,7 @@ class TimeseriesClient:
         organization: str = "GEWV",
         token: str = None,
         client: InfluxDBClient = None,
+        verify_ssl: bool = True,
     ):
         if client is None:
             if host is None:
@@ -32,10 +34,12 @@ class TimeseriesClient:
             if token is None:
                 raise Exception("Missing Token for Timeseries DB Client.")
 
+            protocol = "https" if verify_ssl else "http"
+
             self._client = InfluxDBClient(
-                url=f"https://{host}:{port}",
+                url=f"{protocol}://{host}:{port}",
                 token=token,
-                org=organization,
+                verify_ssl=verify_ssl,
             )
         else:
             self._client = client
@@ -43,6 +47,16 @@ class TimeseriesClient:
         self._write_api = self._client.write_api(write_options=SYNCHRONOUS)
         self._query_api = self._client.query_api()
         self._bucket_api = self._client.buckets_api()
+        self._org_api = self._client.organizations_api()
+
+        self._org_id = self.get_org_id_by_name(org_name=organization)
+
+        if self._org_id is None:
+            raise Exception(
+                f"The organization {organization} dont exists in InfluxDB. Break execution."
+            )
+
+        self._client.org = self._org_id
 
     @staticmethod
     def from_env_properties():
@@ -52,11 +66,13 @@ class TimeseriesClient:
     def health(self):
         return self._client.health()
 
-    def connect(self):
-        health = self.health()
+    def get_org_id_by_name(self, org_name: str) -> Union[str, None]:
+        orgs: List[Organization] = self._org_api.find_organizations()
+        for org in orgs:
+            if org.name == org_name:
+                return org.id
 
-        if not health:
-            raise Exception("Influx DB is not reachable.")
+        return None
 
     def create_bucket(self, bucket: str):
         try:
@@ -64,6 +80,17 @@ class TimeseriesClient:
         except ApiException as err:
             if err.status != 422:
                 raise
+
+    def exist_bucket(self, bucket: str):
+        return self._bucket_api.find_bucket_by_name(bucket_name=bucket)
+
+    def create_project(self, project_name: str):
+        # Steps
+        # 1. create new bucket
+        # 2. create token for bucket
+        # 3. create new org in grafana
+        # 4. create new source in grafana
+        pass
 
     def get_points(
         self,

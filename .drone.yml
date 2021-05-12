@@ -4,6 +4,13 @@ type: docker
 name: default
 
 steps:
+  - name: influxdb
+    image: influxdb
+    detach: true
+    commands:
+      - sleep 10
+      - influx setup --bucket test-bucket --org test-org --token mySuP3rS3cr3tT0keN --username test-user --password test-user-pass --retention 1h --force
+
   - name: build_poetry
     image: python
     volumes:
@@ -79,3 +86,7 @@ volumes:
   - name: poetry_bin
     host:
       path: /tmp/drone/cache/poetry_bin
+
+services:
+  - name: grafana
+    image: grafana/grafana
