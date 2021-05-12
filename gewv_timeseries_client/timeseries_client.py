@@ -41,22 +41,27 @@ class TimeseriesClient:
                 token=token,
                 verify_ssl=verify_ssl,
             )
+
+            if len(organization) != 16:
+                # receive id of the org and store the info
+                self._org_api = self._client.organizations_api()
+                self._org_id = self.get_org_id_by_name(org_name=organization)
+
+                if self._org_id is None:
+                    raise Exception(
+                        f"The organization {organization} dont exists in InfluxDB. Break execution."
+                    )
+
+                self._client.org = self._org_id
+            else:
+                self._client.org = organization
         else:
             self._client = client
 
+        self._org_api = self._client.organizations_api()
         self._write_api = self._client.write_api(write_options=SYNCHRONOUS)
         self._query_api = self._client.query_api()
         self._bucket_api = self._client.buckets_api()
-        self._org_api = self._client.organizations_api()
-
-        self._org_id = self.get_org_id_by_name(org_name=organization)
-
-        if self._org_id is None:
-            raise Exception(
-                f"The organization {organization} dont exists in InfluxDB. Break execution."
-            )
-
-        self._client.org = self._org_id
 
     @staticmethod
     def from_env_properties():
@@ -83,6 +88,13 @@ class TimeseriesClient:
 
     def exist_bucket(self, bucket: str):
         return self._bucket_api.find_bucket_by_name(bucket_name=bucket)
+
+    def get_bucket_by_name(self, bucket_name: str):
+        return self._bucket_api.find_bucket_by_name(bucket_name=bucket_name)
+
+    def delete_bucket(self, bucket: str):
+        bucket_id = self.get_bucket_by_name(bucket_name=bucket)
+        return self._bucket_api.delete_bucket(bucket=bucket_id)
 
     def create_project(self, project_name: str):
         # Steps
