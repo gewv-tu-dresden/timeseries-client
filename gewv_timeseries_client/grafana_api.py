@@ -85,7 +85,6 @@ class GrafanaApi:
             raise Exception(
                 f"Failed to POST request resource path {url} with status code: {res.status_code}"
             )
-
         return res.json()
 
     def get_organizations(self) -> List[GrafanaOrganization]:
