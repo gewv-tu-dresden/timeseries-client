@@ -9,7 +9,7 @@ steps:
     detach: true
     commands:
       - influxd &
-      - sleep 20
+      - sleep 10
       - influx setup --bucket test-bucket --org test-org --token mySuP3rS3cr3tT0keN --username test-user --password test-user-pass --retention 1h --force
 
   - name: grafana
@@ -59,6 +59,7 @@ steps:
       - name: poetry_bin
         path: /root/.poetry/
     commands:
+      - sleep 30
       - /root/.poetry/bin/poetry run pytest -x
 
   - name: make release
