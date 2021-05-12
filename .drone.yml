@@ -92,7 +92,3 @@ volumes:
   - name: poetry_bin
     host:
       path: /tmp/drone/cache/poetry_bin
-
-services:
-  - name: grafana
-    image: grafana/grafana
