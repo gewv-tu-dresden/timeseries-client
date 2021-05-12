@@ -15,7 +15,7 @@ steps:
     image: grafana/grafana
     detach: true
     environment:
-      GF_USERS_ALLOW_ORG_CREATED: true
+      - GF_USERS_ALLOW_ORG_CREATED=true
 
   - name: build_poetry
     image: python
