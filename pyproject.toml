@@ -23,6 +23,7 @@ python = "^3.7.1"
 loguru = "^0.5.1"
 influxdb-client = "^1.16.0"
 pandas = "^1.2.4"
+requests = "^2.25.1"
 
 [tool.poetry.dev-dependencies]
 mypy = "black"

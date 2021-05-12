@@ -1,3 +1,4 @@
+from gewv_timeseries_client.grafana_api import GrafanaApi, GrafanaOrganization
 from influxdb_client import InfluxDBClient
 from influxdb_client.client.write.point import Point
 from influxdb_client.domain.organization import Organization
@@ -63,6 +64,8 @@ class TimeseriesClient:
         self._query_api = self._client.query_api()
         self._bucket_api = self._client.buckets_api()
 
+        self._grafana_api = GrafanaApi(host=host, port=3000, use_tls=False)
+
     @staticmethod
     def from_env_properties():
         client = InfluxDBClient.from_env_properties()
@@ -95,6 +98,23 @@ class TimeseriesClient:
     def delete_bucket(self, bucket: str):
         bucket_id = self.get_bucket_by_name(bucket_name=bucket)
         return self._bucket_api.delete_bucket(bucket=bucket_id)
+
+    def get_grafana_orgs(self) -> List[GrafanaOrganization]:
+        return self._grafana_api.get_organizations()
+
+    def get_grafana_org(self, org_name: str) -> GrafanaOrganization:
+        return self._grafana_api.get_organization_by_name(org_name=org_name)
+
+    def create_grafana_org(self, org_name: str):
+        return self._grafana_api.create_organization(org_name=org_name)
+
+    def delete_grafana_org(self, org_name: str):
+        org = self.get_grafana_org(org_name=org_name)
+
+        if org is None:
+            raise Exception(f"Cant delete grafana org {org_name}. Org not exist!")
+
+        return self._grafana_api.delete_organization(org["id"])
 
     def create_project(self, project_name: str):
         # Steps
