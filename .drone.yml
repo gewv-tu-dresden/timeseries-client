@@ -8,8 +8,13 @@ steps:
     image: influxdb
     detach: true
     commands:
-      - sleep 10
+      - sleep 20
       - influx setup --bucket test-bucket --org test-org --token mySuP3rS3cr3tT0keN --username test-user --password test-user-pass --retention 1h --force
+
+  - name: grafana
+    image: grafana/grafana
+    detach: true
+    environment: GF_USERS_ALLOW_ORG_CREATED=true
 
   - name: build_poetry
     image: python
