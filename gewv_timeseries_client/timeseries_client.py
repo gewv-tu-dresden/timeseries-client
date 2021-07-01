@@ -143,6 +143,22 @@ class TimeseriesClient:
 
         return df
 
+    def get_dataframe_timeindex(self, **kwargs):
+        if not self.health:
+            raise Exception("Influx DB is not reachable or unhealthy.")
+
+        df = self._query_api.query_data_frame(query=self.build_query(**kwargs))
+
+        if '_time' in df.columns:
+            df_with_timeindex = df.set_index(
+                pd.to_datetime(df["_time"])
+            )
+        else:
+            df.index.names = ['NODatetimeIndex']
+            df_with_timeindex = df
+
+        return df_with_timeindex
+
     def write_points(self, project: str, points: List[Point]):
         self._write_api.write(bucket=project, record=points)
 
