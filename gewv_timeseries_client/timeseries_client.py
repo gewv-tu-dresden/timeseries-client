@@ -1,3 +1,4 @@
+from pandas.core.frame import DataFrame
 from gewv_timeseries_client.grafana_api import GrafanaApi, GrafanaOrganization
 from influxdb_client import InfluxDBClient
 from influxdb_client.client.write.point import Point
@@ -5,7 +6,7 @@ from influxdb_client.domain.organization import Organization
 from influxdb_client.rest import ApiException
 from influxdb_client.client.flux_table import FluxTable
 from datetime import datetime
-from typing import List, Union, Optional, Dict
+from typing import List, Union, Optional, Dict, cast
 from influxdb_client.client.write_api import SYNCHRONOUS
 import pandas as pd
 
@@ -139,7 +140,10 @@ class TimeseriesClient:
         if not self.health:
             raise Exception("Influx DB is not reachable or unhealthy.")
 
-        df = self._query_api.query_data_frame(query=self.build_query(**kwargs))
+        df = cast(
+            DataFrame,
+            self._query_api.query_data_frame(query=self.build_query(**kwargs)),
+        )
 
         if "_time" in df.columns:
             df = df.set_index(pd.to_datetime(df["_time"]))

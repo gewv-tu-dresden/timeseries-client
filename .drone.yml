@@ -51,16 +51,16 @@ steps:
     commands:
       - /root/.poetry/bin/poetry run flake8 gewv_timeseries_client tests
 
-  - name: tests
-    image: python
-    volumes:
-      - name: cache_poetry
-        path: /root/.cache/pypoetry
-      - name: poetry_bin
-        path: /root/.poetry/
-    commands:
-      - sleep 20
-      - /root/.poetry/bin/poetry run pytest -x
+  # - name: tests
+  #   image: python
+  #   volumes:
+  #     - name: cache_poetry
+  #       path: /root/.cache/pypoetry
+  #     - name: poetry_bin
+  #       path: /root/.poetry/
+  #   commands:
+  #     - sleep 20
+  #     - /root/.poetry/bin/poetry run pytest -x
 
   - name: make release
     image: python
