@@ -8,7 +8,6 @@ classifiers = [
         "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.7.1",
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
         "Operating System :: Unix",

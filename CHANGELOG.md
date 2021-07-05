@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.1 (2021-07-05)
+### Fix
+* **main:** Classifiers in project file ([`877652b`](https://github.com/gewv-tu-dresden/timeseries-client/commit/877652b67acdd9d74bae87c02fe17470dd25497b))
+
+## v0.4.0 (2021-07-05)
+### Feature
+* **main:** Add grafana client ([`31b8b05`](https://github.com/gewv-tu-dresden/timeseries-client/commit/31b8b059eb0398ffcec8a375fc557059f0649337))
+* **main:** Add delete bucket ([`b5cb4be`](https://github.com/gewv-tu-dresden/timeseries-client/commit/b5cb4be5b6d1d639a7fe1d38fc2770ed5c43aa0e))
+* **test:** Add test create bucket ([`6cffbad`](https://github.com/gewv-tu-dresden/timeseries-client/commit/6cffbad2a83a056104520b598bc02d3f0a596106))
+
 ## v0.3.4 (2021-04-30)
 ### Fix
 * **main:** Min python version is now 3.7 ([`dbd1b47`](https://github.com/gewv-tu-dresden/timeseries-client/commit/dbd1b478040ac2efe7c1918c71830a7c41be144c))
