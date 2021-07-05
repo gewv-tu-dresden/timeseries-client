@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.1 (2021-07-05)
+### Fix
+* **main:** Classifiers in project file ([`877652b`](https://github.com/gewv-tu-dresden/timeseries-client/commit/877652b67acdd9d74bae87c02fe17470dd25497b))
+
 ## v0.4.0 (2021-07-05)
 ### Feature
 * **main:** Add grafana client ([`31b8b05`](https://github.com/gewv-tu-dresden/timeseries-client/commit/31b8b059eb0398ffcec8a375fc557059f0649337))
