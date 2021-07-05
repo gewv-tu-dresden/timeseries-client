@@ -148,6 +148,21 @@ class TimeseriesClient:
         if "_time" in df.columns:
             df = df.set_index(pd.to_datetime(df["_time"]))
 
+        return df
+
+    def query_dataframe(
+        self,
+        flux_query: str,
+    ):
+        """
+        with this function you can send a own query to InfluxDB and
+        you will get back a dataframe with datetimeindex
+        """
+        if not self.health:
+            raise Exception("Influx DB is not reachable or unhealthy.")
+
+        df = self._query_api.query_data_frame(query=flux_query)
+
         if "_time" in df.columns:
             df = df.set_index(pd.to_datetime(df["_time"]))
 
