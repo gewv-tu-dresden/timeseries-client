@@ -137,18 +137,8 @@ class TimeseriesClient:
         return tables
 
     def get_dataframe(self, **kwargs):
-        if not self.health:
-            raise Exception("Influx DB is not reachable or unhealthy.")
 
-        df = cast(
-            DataFrame,
-            self._query_api.query_data_frame(query=self.build_query(**kwargs)),
-        )
-
-        if "_time" in df.columns:
-            df = df.set_index(pd.to_datetime(df["_time"]))
-
-        return df
+        return self.query_dataframe(query=self.build_query(**kwargs))
 
     def query_dataframe(
         self,
@@ -158,10 +148,14 @@ class TimeseriesClient:
         with this function you can send a own query to InfluxDB and
         you will get back a dataframe with datetimeindex
         """
+
         if not self.health:
             raise Exception("Influx DB is not reachable or unhealthy.")
 
-        df = self._query_api.query_data_frame(query=flux_query)
+        df = cast(
+            DataFrame,
+            self._query_api.query_data_frame(query=flux_query),
+        )
 
         if "_time" in df.columns:
             df = df.set_index(pd.to_datetime(df["_time"]))
