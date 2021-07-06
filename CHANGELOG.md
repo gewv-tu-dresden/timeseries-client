@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.0 (2021-07-06)
+### Feature
+* **main:** Add a query_dataframe method to query a dataframe with a query string ([`3766ddc`](https://github.com/gewv-tu-dresden/timeseries-client/commit/3766ddc0abb4f31411ca63ed08acb49928dd83c8))
+
 ## v0.4.1 (2021-07-05)
 ### Fix
 * **main:** Classifiers in project file ([`877652b`](https://github.com/gewv-tu-dresden/timeseries-client/commit/877652b67acdd9d74bae87c02fe17470dd25497b))
