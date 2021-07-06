@@ -137,8 +137,7 @@ class TimeseriesClient:
         return tables
 
     def get_dataframe(self, **kwargs):
-
-        return self.query_dataframe(query=self.build_query(**kwargs))
+        return self.query_dataframe(flux_query=self.build_query(**kwargs))
 
     def query_dataframe(
         self,
