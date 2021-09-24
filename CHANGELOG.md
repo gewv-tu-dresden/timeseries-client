@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.1 (2021-09-24)
+### Fix
+* **main:** Add ciso8601, reduce the parsing time of a request ([`876dc3b`](https://github.com/gewv-tu-dresden/timeseries-client/commit/876dc3be3f629a4e17053d0dba721b6c738530dc))
+
 ## v0.5.0 (2021-07-06)
 ### Feature
 * **main:** Add a query_dataframe method to query a dataframe with a query string ([`3766ddc`](https://github.com/gewv-tu-dresden/timeseries-client/commit/3766ddc0abb4f31411ca63ed08acb49928dd83c8))
