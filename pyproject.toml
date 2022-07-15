@@ -28,7 +28,7 @@ ciso8601 = "^2.2.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "black"
-black = "^21.4b1"
+black = "^22.6.0"
 rope = "^0.17.0"
 pylint = "^2.6.0"
 pytest = "^6.0.1"
