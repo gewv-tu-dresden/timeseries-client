@@ -25,7 +25,7 @@ class TimeseriesClient:
         token: str = None,
         client: InfluxDBClient = None,
         verify_ssl: bool = True,
-        timeout_ms:int = 10000,
+        timeout_ms: int = 10000,
     ):
         if client is None:
             if host is None:
