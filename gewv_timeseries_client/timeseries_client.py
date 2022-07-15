@@ -25,6 +25,7 @@ class TimeseriesClient:
         token: str = None,
         client: InfluxDBClient = None,
         verify_ssl: bool = True,
+        timeout_ms: int = 10000,
     ):
         if client is None:
             if host is None:
@@ -42,6 +43,7 @@ class TimeseriesClient:
                 url=f"{protocol}://{host}:{port}",
                 token=token,
                 verify_ssl=verify_ssl,
+                timeout=timeout_ms,
             )
 
             if len(organization) != 16:

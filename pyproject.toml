@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gewv-timeseries-client"
-version = "0.2.2"
+version = "0.2.3"
 description = "Client to read and write data from our timeseries db."
 authors = ["Karl <karl_eugen.wolffgang@tu-dresden.de>"]
 license = "MIT"
@@ -19,15 +19,16 @@ homepage = "https://github.com/gewv-tu-dresden/timeseries-client"
 
 [tool.poetry.dependencies]
 python = "^3.7.1"
+numpy = "^1.1.1"
 loguru = "^0.5.1"
-influxdb-client = "^1.16.0"
+influxdb-client = "^1.30.0"
 pandas = "^1.2.4"
 requests = "^2.25.1"
 ciso8601 = "^2.2.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "black"
-black = "^21.4b1"
+black = "^22.6.0"
 rope = "^0.17.0"
 pylint = "^2.6.0"
 pytest = "^6.0.1"
