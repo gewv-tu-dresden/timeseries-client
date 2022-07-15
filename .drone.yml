@@ -20,37 +20,37 @@ steps:
   #   commands:
   #     - /run.sh &
 
-  # - name: build_poetry
-  #   image: python
-  #   volumes:
-  #     - name: cache_poetry
-  #       path: /root/.cache/pypoetry
-  #     - name: poetry_bin
-  #       path: /root/.poetry/
-  #   commands:
-  #     - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-  #     - /root/.poetry/bin/poetry install
-  #     - /root/.cache/pypoetry/virtualenvs/gewv-timeseries-client-KC7a4EZU-py3.10/bin/python -m pip install --upgrade pip
+  - name: build_poetry
+    image: python
+    volumes:
+      - name: cache_poetry
+        path: /root/.cache/pypoetry
+      - name: poetry_bin
+        path: /root/.poetry/
+    commands:
+      - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+      - /root/.poetry/bin/poetry install
+      - /root/.cache/pypoetry/virtualenvs/gewv-timeseries-client-KC7a4EZU-py3.10/bin/python -m pip install --upgrade pip
 
-  # - name: check_formatting
-  #   image: python
-  #   volumes:
-  #     - name: cache_poetry
-  #       path: /root/.cache/pypoetry
-  #     - name: poetry_bin
-  #       path: /root/.poetry/
-  #   commands:
-  #     - /root/.poetry/bin/poetry run black --check gewv_timeseries_client tests
+  - name: check_formatting
+    image: python
+    volumes:
+      - name: cache_poetry
+        path: /root/.cache/pypoetry
+      - name: poetry_bin
+        path: /root/.poetry/
+    commands:
+      - /root/.poetry/bin/poetry run black --check gewv_timeseries_client tests
 
-  # - name: check_linting
-  #   image: python
-  #   volumes:
-  #     - name: cache_poetry
-  #       path: /root/.cache/pypoetry
-  #     - name: poetry_bin
-  #       path: /root/.poetry/
-  #   commands:
-  #     - /root/.poetry/bin/poetry run flake8 gewv_timeseries_client tests
+  - name: check_linting
+    image: python
+    volumes:
+      - name: cache_poetry
+        path: /root/.cache/pypoetry
+      - name: poetry_bin
+        path: /root/.poetry/
+    commands:
+      - /root/.poetry/bin/poetry run flake8 gewv_timeseries_client tests
 
   # - name: tests
   #   image: python
