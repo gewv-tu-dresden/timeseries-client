@@ -19,7 +19,7 @@ homepage = "https://github.com/gewv-tu-dresden/timeseries-client"
 
 [tool.poetry.dependencies]
 python = "^3.7.1"
-numpy = "^1.23.1"
+numpy = "^1.1.1"
 loguru = "^0.5.1"
 influxdb-client = "^1.30.0"
 pandas = "^1.2.4"
