@@ -29,7 +29,6 @@ steps:
         path: /root/.poetry/
     commands:
       - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-      - /root/.cache/pypoetry/virtualenvs/gewv-timeseries-client-KC7a4EZU-py3.10/bin/python -m pip install --upgrade pip
       - /root/.poetry/bin/poetry install
 
   - name: check_formatting
