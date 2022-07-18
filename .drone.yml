@@ -76,7 +76,7 @@ steps:
         from_secret: PYPI_TOKEN
     commands:
       - mkdir dist
-      - /root/.poetry/bin/poetry run semantic-release publish --patch
+      - /root/.poetry/bin/poetry run semantic-release publish
     when:
       branch:
         include:
