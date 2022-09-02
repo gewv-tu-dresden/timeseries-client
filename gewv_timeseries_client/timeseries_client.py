@@ -44,6 +44,7 @@ class TimeseriesClient:
                 token=token,
                 verify_ssl=verify_ssl,
                 timeout=timeout_ms,
+                enable_gzip=True,
             )
 
             if len(organization) != 16:

@@ -2,6 +2,27 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.8 (2022-07-18)
+
+
+## v0.5.7 (2022-07-18)
+
+
+## v0.5.6 (2022-07-18)
+
+
+## v0.5.5 (2022-07-18)
+
+
+## v0.5.4 (2022-07-18)
+
+
+## v0.5.3 (2022-07-18)
+
+
+## v0.5.2 (2022-07-18)
+
+
 ## v0.5.1 (2021-09-24)
 ### Fix
 * **main:** Add ciso8601, reduce the parsing time of a request ([`876dc3b`](https://github.com/gewv-tu-dresden/timeseries-client/commit/876dc3be3f629a4e17053d0dba721b6c738530dc))
