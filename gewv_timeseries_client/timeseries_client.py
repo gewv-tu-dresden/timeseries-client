@@ -154,10 +154,18 @@ class TimeseriesClient:
         if not self.health:
             raise Exception("Influx DB is not reachable or unhealthy.")
 
-        df = cast(
+        df_raw = cast(
             DataFrame,
             self._query_api.query_data_frame(query=flux_query),
         )
+        if isinstance(df_raw, list):
+            for i, val in enumerate(df_raw):
+                if i ==0:
+                    df = val
+                else:
+                    df = pd.concat([df, val], ignore_index=True)
+        else:
+            df = df_raw
 
         if "_time" in df.columns:
             df = df.set_index(pd.to_datetime(df["_time"]))
