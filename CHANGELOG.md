@@ -1,7 +1,9 @@
 # Changelog
 
 <!--next-version-placeholder-->
-
+## v0.5.9 (2022-12-09)
+### Fix
+* **main:** Function to load databases from list in query_dataframe
 ## v0.5.8 (2022-07-18)
 
 
