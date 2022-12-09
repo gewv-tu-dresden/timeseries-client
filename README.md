@@ -1,6 +1,6 @@
 # GEWV Timeseries Client
 
-This client is a abstraction of the offical Influx-Client to get and write points to our TimeseriesDB.
+This client is a abstraction of the offical Influx-Client to get and write points to our Influx-TimeseriesDB.
 
 ## Installation
 

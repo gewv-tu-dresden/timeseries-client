@@ -160,7 +160,7 @@ class TimeseriesClient:
         )
         if isinstance(df_raw, list):
             for i, val in enumerate(df_raw):
-                if i ==0:
+                if i == 0:
                     df = val
                 else:
                     df = pd.concat([df, val], ignore_index=True)

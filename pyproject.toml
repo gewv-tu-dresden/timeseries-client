@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "gewv-timeseries-client"
-version = "0.5.8"
-description = "Client to read and write data from our timeseries db."
-authors = ["Karl <karl_eugen.wolffgang@tu-dresden.de>", "Martin <martin.altenburger@tu-dresden.de", "Paul <paul.seidel@tu-dresden.de"]
+version = "0.5.9"
+description = "Client to read & write data from timeseries db."
+authors = ["Karl Wolfgang <karl_eugen.wolffgang@tu-dresden.de>", "Martin Altenburger <martin.altenburger@tu-dresden.de", "Paul Seidel <paul.seidel@tu-dresden.de"]
 license = "MIT"
 classifiers = [
         "Development Status :: 3 - Alpha",
@@ -16,6 +16,7 @@ classifiers = [
         "Operating System :: MacOS"
     ]
 homepage = "https://github.com/gewv-tu-dresden/timeseries-client"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -28,22 +29,16 @@ ciso8601 = "^2.2.0"
 urllib3 = "^1.26.12"
 
 [tool.poetry.dev-dependencies]
-mypy = "black"
+mypy = "0.991"
 black = "^22.6.0"
 rope = "^1.3.0"
 pylint = "^2.15.0"
 pytest = "^7.1.2"
 commitizen = "^2.32.2"
-python-semantic-release = "^7.31.4"
 flake8 = "^5.0.4"
 pytest-asyncio = "^0.19.0"
 python-dotenv = "^0.20.0"
-
-[tool.semantic_release]
-version_variable = "gewv_timeseries_client/__init__.py:__version__"
-version_source = "commit"
-build_command = "/root/.poetry/bin/poetry version $(git describe --tags) && /root/.poetry/bin/poetry build"
-
+twine = "^4.0.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
